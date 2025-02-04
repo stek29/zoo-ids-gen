@@ -54,11 +54,8 @@ const ZooIdGenerator: React.FC = () => {
     <div className="flex flex-col items-center gap-4 p-6">
       <h1 className="text-2xl font-bold">Zoo ID Generator</h1>
       <p className="text-gray-600 text-center max-w-md">
-        Generate <strong>predictable</strong> and <strong>unique</strong> identifiers composed of adjectives and animal names,
-        with the ability to seed the random identifiers. Powered by
-        <a className="text-blue-500 underline mx-1" href="https://github.com/bryanmylee/zoo-ids" target="_blank" rel="noopener noreferrer">
-          bryanmylee/zoo-ids
-        </a>.
+        Generate <strong>predictable</strong> and <strong>unique</strong> identifiers composed of adjectives and animal names
+        with the ability to seed the random identifiers
       </p>
       <Card className="w-full max-w-md p-4 shadow-lg">
         <CardContent className="flex flex-col gap-4">
@@ -123,6 +120,12 @@ const ZooIdGenerator: React.FC = () => {
           )}
         </CardContent>
       </Card>
+      <p className="text-gray-600 text-center max-w-md">
+        Powered by
+        <a className="text-blue-500 underline mx-1" href="https://github.com/bryanmylee/zoo-ids" target="_blank" rel="noopener noreferrer">
+          bryanmylee/zoo-ids
+        </a>
+      </p>
     </div>
   );
 };
