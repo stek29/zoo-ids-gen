@@ -9,12 +9,12 @@ const DEFAULT_NUM_ADJECTIVES: number = 1;
 const DEFAULT_DELIMITER: string = "_";
 const DEFAULT_CASE_STYLE: CaseStyle = "lowercase";
 
-const CASE_STYLE_OPTIONS: CaseStyle[] = [
-  "lowercase",
-  "uppercase",
-  "titlecase",
-  "camelcase",
-  "togglecase",
+const generateCaseStyleLabels = (delimiter: string) => [
+  { value: "lowercase", label: `lower${delimiter}case` },
+  { value: "uppercase", label: `UPPER${delimiter}CASE` },
+  { value: "titlecase", label: `Title${delimiter}Case` },
+  { value: "camelcase", label: `camel${delimiter}Case` },
+  { value: "togglecase", label: `tOgGlE${delimiter}cAsE` },
 ];
 
 const ZooIdGenerator: React.FC = () => {
@@ -91,9 +91,9 @@ const ZooIdGenerator: React.FC = () => {
               value={caseStyle}
               onChange={(e) => setCaseStyle(e.target.value as CaseStyle)}
             >
-              {CASE_STYLE_OPTIONS.map((style) => (
-                <option key={style} value={style}>
-                  {style}
+              {generateCaseStyleLabels(delimiter).map(({ value, label }) => (
+                <option key={value} value={value}>
+                  {label}
                 </option>
               ))}
             </select>
